@@ -386,6 +386,7 @@ public final class R {
         public static final int testscore=0x7f03003d;
         public static final int tutorial_layout=0x7f03003e;
         public static final int tuts=0x7f03003f;
+        public static final int verbal=0x7f030040;
     }
     public static final class string {
         public static final int allinone=0x7f040009;
