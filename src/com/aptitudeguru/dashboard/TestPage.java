@@ -30,6 +30,7 @@ public class TestPage extends Activity implements OnClickListener
 {
 	TextView t1, t2;
 	RadioButton b1, b2, b3, b4;
+	int curQuestion = 0;
 	int count = 1;
 	int start = 1;
 	int quesvisible = 0;
@@ -127,6 +128,8 @@ public class TestPage extends Activity implements OnClickListener
 
 		int j2 = a[j1];
 		click = j1;
+		curQuestion = j1;
+		
 
 		if (click == 0) {
 			btn_prev.setEnabled(false);
@@ -470,6 +473,7 @@ public class TestPage extends Activity implements OnClickListener
 				Intent i = new Intent(getApplicationContext(), Calender.class);
 				i.putExtra("gotoclick", gotoclick);
 				i.putExtra("click", click);
+				i.putExtra("curQuestion", curQuestion);
 				startActivityForResult(i, STATIC_INTEGER_VALUE);
 			}
 		});
@@ -546,7 +550,6 @@ public class TestPage extends Activity implements OnClickListener
 				if (click == (19)) {
 					btn_next.setEnabled(false);
 					btn_next.setVisibility(View.INVISIBLE);
-
 				} else {
 
 					btn_next.setEnabled(true);

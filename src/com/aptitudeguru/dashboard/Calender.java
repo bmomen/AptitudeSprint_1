@@ -14,6 +14,7 @@ public class Calender extends Activity {
 	String PUBLIC_STATIC_STRING_IDENTIFIER;
 	int gotoclick[] = new int[20];
 	int click=0;
+	int curQuestion = 0;
 
 	@Override
 	public void onBackPressed()
@@ -37,8 +38,9 @@ public class Calender extends Activity {
 
 		Bundle bundle = getIntent().getExtras();
 		gotoclick = bundle.getIntArray("gotoclick");
-		  click=bundle.getInt("click");
-
+		click=bundle.getInt("click");
+		curQuestion = bundle.getInt("curQuestion");
+		
 		Button btn_cal1 = (Button) findViewById(R.id.cal1);
 		Button btn_cal2 = (Button) findViewById(R.id.cal2);
 		Button btn_cal3 = (Button) findViewById(R.id.cal3);
@@ -101,6 +103,12 @@ public class Calender extends Activity {
 		if (gotoclick[19] == 1)
 			btn_cal20.setBackgroundColor(Color.YELLOW);
 
+		
+		if(curQuestion == 1)
+		{
+
+			btn_cal1.setTextColor(Color.RED);
+		}
 		btn_cal1.setOnClickListener(new View.OnClickListener() {
 
 			@Override
